@@ -2,7 +2,7 @@
     
 
     #!./.venv/bin/python
-
+#Copyright 2021 Dragos Filipescu
 import discord      # base discord module
 import code         # code.interact
 import os           # environment variables
