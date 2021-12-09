@@ -3,6 +3,7 @@
 
     #!./.venv/bin/python
 #Copyright 2021 Dragos Filipescu
+
 import discord      # base discord module
 import code         # code.interact
 import os           # environment variables
@@ -12,6 +13,20 @@ import os
 from discord.channel import VoiceChannel       # dumb random number generator
 
 from discord.ext import commands    # Bot class and utils
+
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--token", "-t", help = "add a token as an argument or save it in the BOT_TOKEN environment variable")
+args = parser.parse_args()
+if args.token:
+        TOKEN = args.token
+else:
+        TOKEN = os.environ.get('BOT_TOKEN')
+if args.t:
+        TOKEN  = args.t
+else:
+        TOKEN = os.environ.get('BOT_TOKEN')
+
 
 ################################################################################
 ############################### HELPER FUNCTIONS ###############################
@@ -194,6 +209,6 @@ if __name__ == '__main__':
         exit(-1)
 
     # launch bot (blocking operation)
-    bot.run(os.environ['BOT_TOKEN'])
+    bot.run('TOKEN')
     
 
